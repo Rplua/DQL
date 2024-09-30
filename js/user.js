@@ -38,7 +38,7 @@ function mostrarInformacionUsuario(usuario) {
 // Función para cargar las misiones del usuario
 function cargarMisionesUsuario(userId) {
 
-    fetch(`https://dql-daily.onrender.com/user/${userId/misiones}`)
+    fetch(`https://dql-daily.onrender.com/user/${userId}/misiones`)
         .then(response => response.json())
         .then(misiones => {
             const misionContainer = document.getElementById('mision');
@@ -265,7 +265,7 @@ function agregarEventos(loggedInUser) {
 
 // Función para generar misiones aleatorias
 function generarMisionesAleatorias() {
-    fetch('https://dql-daily.onrender.commision/random')
+    fetch('https://dql-daily.onrender.com/mision/random')
         .then(response => response.json())
         .then(data => {
             if (!Array.isArray(data)) throw new Error('El formato de datos es incorrecto');

@@ -37,7 +37,8 @@ function mostrarInformacionUsuario(usuario) {
 
 // Función para cargar las misiones del usuario
 function cargarMisionesUsuario(userId) {
-    fetch(`http://localhost:8080/user/${userId}/misiones`)
+
+    fetch(`https://dql-daily.onrender.com/user/${userId/misiones}`)
         .then(response => response.json())
         .then(misiones => {
             const misionContainer = document.getElementById('mision');
@@ -80,7 +81,8 @@ function crearMisionElemento(mision) {
 
 // Función para cargar amigos excluyendo al usuario actual
 function cargarAmigosExcluyendoUsuario(userId) {
-    fetch(`http://localhost:8080/user/exclude/${userId}`)
+    
+    fetch(`https://dql-daily.onrender.com/user/exclude/${userId}`)
         .then(response => response.json())
         .then(users => {
             const amigosDiv = document.getElementById('amigos');
@@ -118,7 +120,7 @@ function crearAmigoElemento(user) {
 
 // Función para cargar todos los objetos
 function cargarObjetos(userId) {
-    fetch(`http://localhost:8080/user/${userId}/available-objectos`)
+    fetch(`https://dql-daily.onrender.com/user/${userId}/available-objectos`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error en la respuesta de la red: ' + response.statusText);
@@ -191,7 +193,7 @@ async function cargarTusObjectos(userId) {
         }
 
         // Llama a la API para obtener los objetos del usuario
-        const response = await fetch(`http://localhost:8080/user/${userId}/objectos`);
+        const response = await fetch(`https://dql-daily.onrender.com/user/${userId}/objectos`);
 
         // Verificar si la respuesta es exitosa
         if (!response.ok) {
@@ -263,7 +265,7 @@ function agregarEventos(loggedInUser) {
 
 // Función para generar misiones aleatorias
 function generarMisionesAleatorias() {
-    fetch('http://localhost:8080/mision/random')
+    fetch('https://dql-daily.onrender.commision/random')
         .then(response => response.json())
         .then(data => {
             if (!Array.isArray(data)) throw new Error('El formato de datos es incorrecto');
@@ -308,7 +310,7 @@ function actualizarUsuario(loggedInUser) {
         friends : loggedInUser.friends
     };
 
-    fetch(`http://localhost:8080/user/${userId}`, {
+    fetch(`https://dql-daily.onrender.com/user/${userId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -330,7 +332,7 @@ function actualizarUsuario(loggedInUser) {
 
 // Función para eliminar la cuenta del usuario
 function eliminarCuenta(userId) {
-    fetch(`http://localhost:8080/user/${userId}`, {
+    fetch(`https://dql-daily.onrender.com/user/${userId}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'

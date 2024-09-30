@@ -4,7 +4,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const userName = document.getElementById('userName').value;
     const password = document.getElementById('password').value;
 
-    fetch('http://localhost:8080/user/login', {
+    fetch('https://dql-daily.onrender.com/user/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

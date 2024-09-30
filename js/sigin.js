@@ -15,7 +15,7 @@ document.getElementById('signup-button').addEventListener('click', function() {
     }
 
     // Realizar la petición POST para crear el usuario
-    fetch('http://localhost:8080/user', {
+    fetch('https://dql-daily.onrender.com/user', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
